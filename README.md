@@ -1,7 +1,17 @@
 Plan:
 - [x] install deps with poetry
-- [ ] placeholder entry points
-- [ ] add postgresql
-- [ ] services, schemes, misgrations
+- [x] placeholder entry points
+- [x] add postgresql
+- [x] reading
+    - fastapi courses (DTO, services)
+    - sqlalchemy tutorials
+- [x] schemes
+- [x] migration
+- [x] services
+- [x] repos
 - [ ] pytest to run some operations
-- [ ] create instruction, use make to make life simpler
+- [x] create instruction, use `make` to make life simpler
+
+- [x] remove URL from alembic ini
+- [ ] use other connection
+- [ ] hash password
