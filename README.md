@@ -6,3 +6,20 @@
 # Challenges Faced
 - Make alembic migration to use async driver.
 - `advanced_alchemy` is not the latest so `PasswordHash` is copied from the latest version and hashing backend implemented without 3rd packages. The password can be check using `check_password` endpoint.
+
+# How to Run
+Requirements
+- Python 3.12
+- Poetry installed
+- Docker installed
+
+Linux/Mac:
+1. `git clone git@github.com:iutinvg/litestar_crud.git`
+2. `cd litestar_crud`
+3. `python -m venv venv`
+4. `source venv/bin/activate`
+5. `poetry install`
+6. `make dbup`
+7. `make dbmigrate`
+8. `make run`
+9. open `http://localhost:8000/schema/swagger`
