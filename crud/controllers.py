@@ -8,6 +8,7 @@ from asyncpg import Connection
 
 from crud.services import provide_user_service, UserService
 from crud.schemes import UserGet, UserCreate, UserUpdate
+from crud.models import User
 
 
 class HealthCheckController(Controller):
@@ -60,6 +61,13 @@ class UserController(Controller):
         """Get existing"""
         obj = await user_service.get(user_id)
         return user_service.to_schema(data=obj, schema_type=UserGet)
+
+    @get(path="/check_password/{user_id:int}")
+    async def check_password(self, user_service: UserService, user_id: int,
+                             password: str) -> dict:
+        """"""
+        obj: User = await user_service.get(user_id)
+        return {'ok': obj.password.verify(password)}
 
     @patch(path="/{user_id:int}")
     async def update_user(
