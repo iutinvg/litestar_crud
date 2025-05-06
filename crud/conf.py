@@ -16,5 +16,6 @@ class DBConf:
 @dataclass
 class Conf:
     """Basic app settings"""
-    debug: bool = True
+    debug: bool = os.getenv('DEBUG')
+    salt: str = os.getenv('SALT')
     db: DBConf = field(default=DBConf)

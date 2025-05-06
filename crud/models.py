@@ -11,10 +11,9 @@ from sqlalchemy.orm import DeclarativeBase, Mapped
 # created_at TIMESTAMP UTC-0
 # updated_at TIMESTAMP UTC-0
 
-
-class Base(DeclarativeBase):
-    """For now it's used in alembic"""
-    pass
+# class Base(DeclarativeBase):
+#     """For now it's used in alembic"""
+#     pass
 
 
 class User(BigIntAuditBase):

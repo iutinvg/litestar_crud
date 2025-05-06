@@ -17,6 +17,7 @@ class UserBase(Struct):
 class UserGet(UserBase):
     """Plus some internal info"""
     id: int
+    password: str
     created_at: datetime
 
 

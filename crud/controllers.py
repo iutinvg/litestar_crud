@@ -10,17 +10,20 @@ from crud.services import provide_user_service, UserService
 from crud.schemes import UserGet, UserCreate, UserUpdate
 
 
-class UserController(Controller):
-    """Our users"""
+class HealthCheckController(Controller):
+    """
+    Controller with direct connection from a pool
+    Maybe can be useful to check DB health.
+    """
 
-    @get(path="/user")
-    async def get_user(self, db_connection: Connection) -> dict[str, str]:
+    @get(path="/health_check")
+    async def health_check(self, db_connection: Connection) -> dict[str, str]:
         """Check database available and returns app config info."""
         result = await db_connection.fetch("select 1")
         return {"select_1": str(result)}
 
 
-class UserC(Controller):
+class UserController(Controller):
     """Users"""
     path = "/users"
     dependencies = {"user_service": Provide(provide_user_service)}

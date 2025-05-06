@@ -13,5 +13,6 @@ Plan:
 - [x] create instruction, use `make` to make life simpler
 
 - [x] remove URL from alembic ini
-- [ ] use other connection
+- [x] use other connection
 - [ ] hash password
+- [ ] better base model?
